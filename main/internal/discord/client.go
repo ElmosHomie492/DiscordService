@@ -11,6 +11,7 @@ type DiscordClient struct {
 }
 
 func NewDiscordClient(token string) (*DiscordClient, error) {
+	log.Print("Initializing Discord client with token: ", token)
 	session, err := discordgo.New("Bot " + token)
 	if err != nil {
 		return nil, err
