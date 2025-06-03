@@ -40,6 +40,8 @@ func (s *Service) HandleFillout(c *gin.Context) {
 		return
 	}
 
+	s.DiscordClient.ChannelMessageSend("1379246677751238698", "Role added successfully to user "+filloutData.UserID)
+
 	c.JSON(http.StatusOK, gin.H{"message": "Role added successfully"})
 }
 
